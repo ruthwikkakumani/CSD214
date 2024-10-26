@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Tracker</title>
+</head>
+<body>
+    <h1>Package Tracker Dashboard</h1>
+    <input type="text" id="trackerId" placeholder="Enter Tracker ID" />
+    <select id="statusSelect">
+        <option value="">Select Status</option>
+        <option value="Order Confirmed">Order Confirmed</option>
+        <option value="Shipped">Shipped</option>
+        <option value="Out for Delivery">Out for Delivery</option>
+        <option value="Delivered">Delivered</option>
+    </select>
+    <button id="updateButton">Update Status</button>
+    <div id="message"></div>
+
+    <script>
+        document.getElementById('updateButton').addEventListener('click', function() {
+            const trackerId = document.getElementById('trackerId').value;
+            const status = document.getElementById('statusSelect').value;
+            const messageDiv = document.getElementById('message');
+
+            if (!trackerId || !status) {
+                messageDiv.textContent = "Please enter a Tracker ID and select a status.";
+                return;
+            }
+
+            // Send a POST request to update the package status
+            fetch('/update-status', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ trackerId, status }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                messageDiv.textContent = data.message;
+                messageDiv.style.color = response.ok ? "green" : "red";
+            })
+            .catch(error => {
+                messageDiv.textContent = "Error updating status.";
+                messageDiv.style.color = "red";
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

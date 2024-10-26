@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Order Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li class="general">GENERAL</li>
+                <li><a href="#" onclick="showSection('Dashboard')">Dashboard</a></li>
+                <li><a href="#" onclick="showSection('Products')">Products</a></li>
+                <li><a href="#" onclick="showSection('On_Progress')">On Progress</a></li>
+                <li><a href="#" onclick="showSection('Platforms')">Platforms</a></li>
+                <li><a href="#" onclick="showSection('Reports')">Reports</a></li>
+                <li><a href="#" onclick="showSection('Articles')">Articles</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <div id="Dashboard" class="section"> 
+                <nav class="header_top">
+                    <div class="head_title">
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div class="User_icon">
+                        <img src="Icons/user.ico" alt="">
+                    </div>
+                </nav>
+
+                <div class="status-container">
+                    <div class="status-bar">
+                        <div class="step completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Order Confirmed</span>
+                        </div>
+                        <div class="step completed">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Shipped</span>
+                        </div>
+                        <div class="step in-progress">
+                            <i class="fas fa-truck-loading"></i>
+                            <span>Out for Delivery</span>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-box-open"></i>
+                            <span>Delivered</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <script src="script.js"></script>
+
+
+                <div class="Order_history_div">
+                    <div class="head_title">
+                        <h1>Order History</h1>
+                    </div>
+
+                    <div class="options_title">
+                        <div class="head_title_1" id="head_title_1">
+                            <span>All Orders</span>
+                        </div>
+
+                        <div class="head_title_1">
+                            <span>Completed</span>
+                        </div>
+
+                        <div class="head_title_1">
+                            <span>In Progress</span>
+                        </div>
+
+                        <div class="head_title_1">
+                            <span>Cancelled</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="products_table">
+                    <table>
+                        <thead>
+                            <tr class="product_history_table">
+                                <th class="prdt_table">Product</th>
+                                <th class="Tracking_table">Tracking ID</th>
+                                <th class="date_table">Date</th>
+                                <th class="status_table">Status</th>
+                                <th class="amount_table">Amount</th>
+                                <th class="Location_table">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productBody">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div id="Products" class="section" style="display: none;">
+                <nav class="header_top">
+                    <div class="head_title">
+                        <h1>Products</h1>
+                    </div>
+                    <div class="User_icon">
+                        <img src="Icons/user.ico" alt="">
+                    </div>
+                </nav>
+            </div>
+
+
+            <div id="On_Progress" class="section" style="display: none;">
+                <nav class="header_top">
+                    <div class="head_title">
+                        <h1>On Progress</h1>
+                    </div>
+                    <div class="User_icon">
+                        <img src="Icons/user.ico" alt="">
+                    </div>
+                </nav>
+            </div>
+
+
+            <div id="Platforms" class="section" style="display: none;">
+                <nav class="header_top">
+                    <div class="head_title">
+                        <h1>Platforms</h1>
+                    </div>
+                    <div class="User_icon">
+                        <img src="Icons/user.ico" alt="">
+                    </div>
+                </nav>
+            </div>
+
+
+            <div id="Reports" class="section" style="display: none;">
+                <nav class="header_top">
+                    <div class="head_title">
+                        <h1>Reports</h1>
+                    </div>
+                    <div class="User_icon">
+                        <img src="Icons/user.ico" alt="">
+                    </div>
+                </nav>
+            </div>
+
+
+            <div id="Articles" class="section" style="display: none;">
+                <nav class="header_top">
+                    <div class="head_title">
+                        <h1>Articles</h1>
+                    </div>
+                    <div class="User_icon">
+                        <img src="Icons/user.ico" alt="">
+                    </div>
+                </nav>
+            </div>
+
+
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
